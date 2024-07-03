@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "clangd", "golangci_lint_ls", "tsserver", "jdtls", "basedpyright", "cssls", "html"}
+				ensure_installed = { "lua_ls", "clangd", "golangci_lint_ls", "tsserver", "jdtls", "pyright", "cssls", "html"}
 			})
 		end
 	},
@@ -22,7 +22,7 @@ return {
 			lspconfig.golangci_lint_ls.setup({})
 			lspconfig.tsserver.setup({})
 			lspconfig.jdtls.setup({})
-			lspconfig.basedpyright.setup({})
+			lspconfig.pyright.setup({})
 			lspconfig.cssls.setup({})
 			lspconfig.html.setup({})
 

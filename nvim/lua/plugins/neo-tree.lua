@@ -13,11 +13,10 @@ return {
 					event = "file_open_requested",
 					handler = function()
 						require("neo-tree.command").execute({ action = "close" })
-					end
+					end,
 				},
-
-			}
+			},
 		})
 		vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
-	end
+	end,
 }

@@ -11,7 +11,6 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "emmet_ls",
-          "basedpyright",
           "clangd",
           "cssls",
           "html",
@@ -32,9 +31,6 @@ return {
       local lspconfig = require("lspconfig")
 
       lspconfig.emmet_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.basedpyright.setup({
         capabilities = capabilities,
       })
       lspconfig.clangd.setup({

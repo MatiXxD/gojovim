@@ -19,7 +19,7 @@ return {
           "pyright",
           "quick_lint_js",
           "tsserver",
-          "golangci_lint_ls",
+          "gopls",
         },
       })
     end,
@@ -57,7 +57,7 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
-      lspconfig.golangci_lint_ls.setup({
+      lspconfig.gopls.setup({
         capabilities = capabilities,
       })
 

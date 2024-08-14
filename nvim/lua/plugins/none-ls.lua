@@ -11,7 +11,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 				-- RUBY
 				null_ls.builtins.formatting.rubocop,
-				null_ls.builtins.diagnostics.rubocop,
+				-- null_ls.builtins.diagnostics.rubocop,
 				-- JS | TS
 				null_ls.builtins.formatting.prettier.with({
 					filetypes = { "html", "json", "yaml", "markdown", "vue" },
@@ -22,11 +22,11 @@ return {
 				null_ls.builtins.formatting.isort,
 				-- C++
 				null_ls.builtins.formatting.clang_format,
-				require("none-ls.diagnostics.cpplint"),
+				-- require("none-ls.diagnostics.cpplint"),
 				-- GO
 				null_ls.builtins.formatting.gofumpt,
 				null_ls.builtins.formatting.goimports,
-				null_ls.builtins.diagnostics.golangci_lint,
+				-- null_ls.builtins.diagnostics.golangci_lint,
 			},
 		})
 

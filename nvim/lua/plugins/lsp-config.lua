@@ -12,7 +12,6 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "basedpyright",
           "clangd",
           "cssls",
           "emmet_ls",
@@ -35,13 +34,19 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
 
-      lspconfig.emmet_ls.setup({
-        capabilities = capabilities,
-      })
       lspconfig.clangd.setup({
         capabilities = capabilities,
       })
       lspconfig.cssls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.emmet_ls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.golangci_lint_ls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.gopls.setup({
         capabilities = capabilities,
       })
       lspconfig.html.setup({
@@ -62,10 +67,10 @@ return {
       lspconfig.quick_lint_js.setup({
         capabilities = capabilities,
       })
-      lspconfig.tsserver.setup({
+      lspconfig.rubocop.setup({
         capabilities = capabilities,
       })
-      lspconfig.gopls.setup({
+      lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
 

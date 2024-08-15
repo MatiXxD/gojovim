@@ -2,7 +2,9 @@ return {
   {
     "williamboman/mason.nvim",
     config = function()
-      require("mason").setup()
+      require("mason").setup({
+        PATH = "prepend",
+      })
     end,
   },
   {
@@ -10,16 +12,19 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "emmet_ls",
+          "basedpyright",
           "clangd",
           "cssls",
+          "emmet_ls",
+          "golangci_lint_ls",
+          "gopls",
           "html",
           "jdtls",
           "lua_ls",
           "pyright",
           "quick_lint_js",
+          "rubocop",
           "tsserver",
-          "gopls",
         },
       })
     end,
@@ -41,6 +46,9 @@ return {
       })
       lspconfig.html.setup({
         capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.documentFormattingProvider = false
+        end,
       })
       lspconfig.jdtls.setup({
         capabilities = capabilities,

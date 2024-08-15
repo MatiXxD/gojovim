@@ -15,9 +15,11 @@ return {
 				-- PYTHON
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
-        null_ls.builtins.formatting.djlint,
-        null_ls.builtins.diagnostics.djlint,
-        -- HTML | CSS
+				null_ls.builtins.formatting.djlint.with({
+          args = { "-", "--reformat", "--indent", 2 },
+        }),
+				null_ls.builtins.diagnostics.djlint,
+				-- HTML | CSS
 				null_ls.builtins.formatting.prettier.with({
 					filetypes = { "html", "json", "yaml", "markdown", "vue" },
 				}),

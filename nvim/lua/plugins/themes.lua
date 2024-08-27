@@ -65,7 +65,7 @@ return {
 
 			vim.g.sonokai_enable_italic = true
 			vim.cmd.colorscheme("sonokai")
-			vim.keymap.set("n", "<leader>ts", toggle_style, {})
+			vim.keymap.set("n", "<leader>ta", toggle_style, {})
 		end,
 	},
 }

@@ -7,7 +7,6 @@ return {
         "djlint",
         "clang-format",
         "cpplint",
-        "eslint_d",
         "gofumpt",
         "goimports",
         "golangci-lint",

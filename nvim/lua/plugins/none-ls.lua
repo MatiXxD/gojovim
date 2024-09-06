@@ -35,6 +35,10 @@ return {
 						"typescriptreact",
 						"yaml",
 					},
+					extra_args = {
+						"--use-tabs",
+						"--single-quote",
+					},
 				}),
 				-- C++
 				null_ls.builtins.formatting.clang_format,

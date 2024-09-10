@@ -69,6 +69,9 @@ return {
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
+				root_dir = function(fname)
+					return vim.loop.cwd()
+				end,
 			})
 			lspconfig.eslint.setup({
 				capabilities = capabilities,

@@ -36,12 +36,13 @@ return {
 						"yaml",
 					},
 					extra_args = {
-						"--use-tabs",
 						"--single-quote",
 					},
 				}),
 				-- C++
-				null_ls.builtins.formatting.clang_format,
+				null_ls.builtins.formatting.clang_format.with({
+					extra_args = { "--style=Google" },
+				}),
 				-- require("none-ls.diagnostics.cpplint"),
 				-- GO
 				null_ls.builtins.formatting.gofumpt,

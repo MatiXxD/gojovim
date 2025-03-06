@@ -17,3 +17,4 @@ function ToggleCurline()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>cr", ":lua ToggleCurline()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>dg", ":lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })

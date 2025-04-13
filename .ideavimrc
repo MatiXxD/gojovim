@@ -34,13 +34,13 @@ nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
 
 " system clipboard
-set clipboard+=unnamed
+set clipboard=unnamed
 imap <C-S-v> <C-r>+
 nmap <C-a> ggVG"+y
 vmap <leader>y "+y
 
 " buffer (buffer < window < tab)
-nmap <leader>xx <Action>(CloseContent)
+nmap <C-w>q <Action>(CloseContent)
 nmap <leader>xa <Action>(CloseAllEditors)
 nmap <leader>xo <Action>(CloseAllEditorsButActive)
 nmap <leader>xp <Action>(CloseAllUnpinnedEditors)

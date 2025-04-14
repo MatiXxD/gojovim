@@ -34,10 +34,8 @@ nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
 
 " system clipboard
-set clipboard=unnamed
 imap <C-S-v> <C-r>+
 nmap <C-a> ggVG"+y
-vmap <leader>y "+y
 
 " buffer (buffer < window < tab)
 nmap <C-w>q <Action>(CloseContent)

@@ -17,28 +17,28 @@ return {
 					file:write('vim.cmd.colorscheme("' .. colorscheme .. '")\n')
 					file:close()
 				end
-          print("Error: Couldn't open theme file")
+				print("Error: Couldn't open theme file")
 			end
 
 			local function set_colorscheme(prompt_bufnr)
 				local selected = action_state.get_selected_entry()
 				actions.close(prompt_bufnr)
 				vim.cmd("colorscheme " .. selected[1])
-        save_colorsceme(selected[1])
+				save_colorsceme(selected[1])
 			end
 
 			local function next_colorscheme(prompt_bufnr)
 				actions.move_selection_next(prompt_bufnr)
 				local selected = action_state.get_selected_entry()
 				vim.cmd("colorscheme " .. selected[1])
-        save_colorsceme(selected[1])
+				save_colorsceme(selected[1])
 			end
 
 			local function prev_colorscheme(prompt_bufnr)
 				actions.move_selection_previous(prompt_bufnr)
 				local selected = action_state.get_selected_entry()
 				vim.cmd("colorscheme " .. selected[1])
-        save_colorsceme(selected[1])
+				save_colorsceme(selected[1])
 			end
 
 			local colors = vim.fn.getcompletion("", "color")

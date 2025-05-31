@@ -18,3 +18,8 @@ end
 
 vim.api.nvim_set_keymap("n", "<leader>cr", ":lua ToggleCurline()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>dg", ":lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+vim.keymap.set("n", "J", "}")
+vim.keymap.set("n", "K", "{")

@@ -103,7 +103,7 @@ nmap <leader>sh <Action>(LocalHistory.ShowHistory)
 nmap <leader>sf <Action>(ShowFilePath)
 nmap <leader>si <Action>(SelectIn)
 nmap <leader>fg <Action>(FindInPath)
-nmap <leader>ff <Action>(GotoFile)
+nmap <C-p> <Action>(GotoFile)
 nmap <leader>rp <Action>(ReplaceInPath)
 nmap <leader>sw <Action>($SearchWeb)
 
@@ -270,3 +270,4 @@ set commentary
 " continuous shift (a formatter should help you)
 xnoremap < <gv
 xnoremap > >gv
+

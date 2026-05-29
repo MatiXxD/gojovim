@@ -41,8 +41,8 @@ return {
 			vim.lsp.config("neocmake", {
 				capabilities = capabilities,
 				filetypes = { "cmake", "txt" },
-				root_dir = function(fname)
-					return vim.loop.cwd()
+				root_dir = function(bufnr, on_dir)
+					on_dir(vim.uv.cwd())
 				end,
 			})
 
@@ -56,15 +56,15 @@ return {
 
 			vim.lsp.config("golangci_lint_ls", {
 				capabilities = capabilities,
-				root_dir = function(fname)
-					return vim.loop.cwd()
+				root_dir = function(bufnr, on_dir)
+					on_dir(vim.uv.cwd())
 				end,
 			})
 
 			vim.lsp.config("gopls", {
 				capabilities = capabilities,
-				root_dir = function(fname)
-					return vim.loop.cwd()
+				root_dir = function(bufnr, on_dir)
+					on_dir(vim.uv.cwd())
 				end,
 			})
 
@@ -85,16 +85,13 @@ return {
 
 			vim.lsp.config("pyright", {
 				capabilities = capabilities,
-				root_dir = function(fname)
-					return vim.loop.cwd()
+				root_dir = function(bufnr, on_dir)
+					on_dir(vim.uv.cwd())
 				end,
 			})
 
 			vim.lsp.config("eslint", {
 				capabilities = capabilities,
-				-- root_dir = function(fname)
-				-- 	return vim.loop.cwd()
-				-- end,
 				on_attach = function(client, bufnr)
 					vim.api.nvim_create_autocmd("BufWritePre", {
 						buffer = bufnr,
@@ -117,6 +114,22 @@ return {
 			vim.keymap.set("n", "<leader>qm", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+
+			vim.lsp.enable({
+				"clangd",
+				"neocmake",
+				"cssls",
+				"emmet_ls",
+				"golangci_lint_ls",
+				"gopls",
+				"html",
+				"jdtls",
+				"lua_ls",
+				"pyright",
+				"eslint",
+				"rubocop",
+				"ts_ls",
+			})
 		end,
 	},
 }

@@ -33,55 +33,64 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
 
-			lspconfig.clangd.setup({
+			vim.lsp.config("clangd", {
 				capabilities = capabilities,
 			})
-			lspconfig.neocmake.setup({
+
+			vim.lsp.config("neocmake", {
 				capabilities = capabilities,
 				filetypes = { "cmake", "txt" },
 				root_dir = function(fname)
 					return vim.loop.cwd()
 				end,
 			})
-			lspconfig.cssls.setup({
+
+			vim.lsp.config("cssls", {
 				capabilities = capabilities,
 			})
-			lspconfig.emmet_ls.setup({
+
+			vim.lsp.config("emmet_ls", {
 				capabilities = capabilities,
 			})
-			lspconfig.golangci_lint_ls.setup({
-				capabilities = capabilities,
-				root_dir = function(fname)
-					return vim.loop.cwd()
-				end,
-			})
-			lspconfig.gopls.setup({
+
+			vim.lsp.config("golangci_lint_ls", {
 				capabilities = capabilities,
 				root_dir = function(fname)
 					return vim.loop.cwd()
 				end,
 			})
-			lspconfig.html.setup({
+
+			vim.lsp.config("gopls", {
+				capabilities = capabilities,
+				root_dir = function(fname)
+					return vim.loop.cwd()
+				end,
+			})
+
+			vim.lsp.config("html", {
 				capabilities = capabilities,
 				on_attach = function(client, bufnr)
 					client.server_capabilities.documentFormattingProvider = false
 				end,
 			})
-			lspconfig.jdtls.setup({
+
+			vim.lsp.config("jdtls", {
 				capabilities = capabilities,
 			})
-			lspconfig.lua_ls.setup({
+
+			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 			})
-			lspconfig.pyright.setup({
+
+			vim.lsp.config("pyright", {
 				capabilities = capabilities,
 				root_dir = function(fname)
 					return vim.loop.cwd()
 				end,
 			})
-			lspconfig.eslint.setup({
+
+			vim.lsp.config("eslint", {
 				capabilities = capabilities,
 				-- root_dir = function(fname)
 				-- 	return vim.loop.cwd()
@@ -93,10 +102,12 @@ return {
 					})
 				end,
 			})
-			lspconfig.rubocop.setup({
+
+			vim.lsp.config("rubocop", {
 				capabilities = capabilities,
 			})
-			lspconfig.ts_ls.setup({
+
+			vim.lsp.config("ts_ls", {
 				capabilities = capabilities,
 				on_attach = function(client, bufnr)
 					client.server_capabilities.documentFormattingProvider = false

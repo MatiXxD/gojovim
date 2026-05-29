@@ -9,6 +9,14 @@ else
 	vim.opt.rtp:prepend(lazypath)
 	require("vim-settings")
 	-- require("lazy").setup("themes")
-	require("lazy").setup("plugins")
+	require("lazy").setup({
+		spec = {
+			{ import = "plugins" },
+		},
+		rocks = {
+			enabled = false,
+			hererocks = false,
+		},
+	})
 	require("theme")
 end
